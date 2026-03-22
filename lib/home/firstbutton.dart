@@ -5,14 +5,14 @@ class Firstbutton extends StatelessWidget {
   final String text;
   final Color color;
   final FaIconData? icon;
-  final VoidCallback onpress;
+
   final Color frontcolor;
   final Color? iconcolor;
   const Firstbutton({
     super.key,
     required this.text,
     required this.color,
-    required this.onpress,
+
     required this.frontcolor,
     this.icon,
     this.iconcolor,
