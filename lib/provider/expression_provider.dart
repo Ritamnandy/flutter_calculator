@@ -7,7 +7,6 @@ class ExpressionProvider extends ChangeNotifier {
   String get value => _btnvalue;
 
   void evaluteExpression(String btnvalue) {
-    btnvalue = btnvalue.replaceAll('X', '*');
     if (btnvalue == 'AC') {
       _btnvalue = '';
       btnvalue = '';
@@ -15,7 +14,7 @@ class ExpressionProvider extends ChangeNotifier {
       _btnvalue = _btnvalue.substring(0, _btnvalue.length - 1);
       btnvalue = btnvalue.substring(0, btnvalue.length - 1);
     } else if (btnvalue == '=') {
-      calculate(btnvalue);
+      calculate(_btnvalue);
     } else {
       _btnvalue += btnvalue;
       btnvalue += btnvalue;
@@ -25,7 +24,10 @@ class ExpressionProvider extends ChangeNotifier {
   }
 
   void calculate(String value) {
-    if (value.isEmpty || value == '') {
+    value = value.replaceAll('X', '*').replaceAll('÷', '/');
+    value = value.replaceAll(' ', '');
+    debugPrint(value);
+    if (value.isEmpty) {
       _btnvalue = '0';
       notifyListeners();
       return;
@@ -37,9 +39,14 @@ class ExpressionProvider extends ChangeNotifier {
 
       var context = ContextModel();
       var evaluator = RealEvaluator(context);
+
       var eval = evaluator.evaluate(exp);
 
-      _btnvalue = eval.toString();
+      if (eval.isInfinite || eval.isNaN) {
+        _btnvalue = 'NaN';
+      } else {
+        _btnvalue = eval.toStringAsFixed(2);
+      }
     } catch (e) {
       _btnvalue = 'NaN';
     }

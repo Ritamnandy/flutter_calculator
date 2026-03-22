@@ -1,12 +1,12 @@
 import 'package:calculate/home/firstbutton.dart';
-import 'package:calculate/home/secondpage.dart';
+import 'package:calculate/home/homepage.dart';
 import 'package:calculate/provider/expression_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Secondpage extends StatelessWidget {
+  const Secondpage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,32 +34,175 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 115),
+              SizedBox(height: 58),
               Expanded(
                 flex: 6,
                 child: GridView.builder(
-                  itemCount: 20,
+                  itemCount: 35,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
+                    crossAxisCount: 5,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) {
                     if (index == 0) {
                       return GestureDetector(
+                        onTap: () {},
+                        child: Firstbutton(
+                          text: '2nd',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(116, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 1) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('rad');
+                        },
+                        child: Firstbutton(
+                          text: 'rad',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(123, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 2) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('sin(');
+                        },
+                        child: Firstbutton(
+                          text: 'sin',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(162, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 3) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('cos(');
+                        },
+                        child: Firstbutton(
+                          text: 'cos',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+                          frontcolor: const Color.fromARGB(150, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 4) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('tan(');
+                        },
+                        child: Firstbutton(
+                          text: 'tan',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(171, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 5) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('^');
+                        },
+                        child: Firstbutton(
+                          text: 'x^y',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(177, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 6) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('lg(');
+                        },
+                        child: Firstbutton(
+                          text: 'lg',
+
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(168, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 7) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('ln(');
+                        },
+                        child: Firstbutton(
+                          text: 'ln',
+
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(176, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 8) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('(');
+                        },
+                        child: Firstbutton(
+                          text: '(',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(174, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 9) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression(')');
+                        },
+                        child: Firstbutton(
+                          text: ')',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(181, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 10) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('√');
+                        },
+                        child: Firstbutton(
+                          text: '√x',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+
+                          frontcolor: const Color.fromARGB(179, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 11) {
+                      return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('AC');
                         },
                         child: Firstbutton(
                           text: 'AC',
+
                           color: const Color.fromARGB(255, 38, 38, 38),
 
-                          frontcolor: const Color.fromARGB(255, 231, 81, 36),
+                          frontcolor: const Color.fromARGB(255, 251, 84, 33),
                         ),
                       );
                     }
-                    if (index == 1) {
+                    if (index == 12) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('del');
@@ -67,14 +210,13 @@ class Homepage extends StatelessWidget {
                         child: Firstbutton(
                           text: '',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
-                          frontcolor: Colors.white,
                           icon: FontAwesomeIcons.deleteLeft,
-                          iconcolor: const Color.fromARGB(255, 232, 80, 34),
+                          iconcolor: const Color.fromARGB(255, 239, 82, 34),
+                          frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 2) {
+                    if (index == 13) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('%');
@@ -83,26 +225,36 @@ class Homepage extends StatelessWidget {
                           text: '%',
                           color: const Color.fromARGB(255, 38, 38, 38),
 
-                          frontcolor: const Color.fromARGB(255, 231, 82, 36),
+                          frontcolor: const Color.fromARGB(255, 240, 79, 30),
                         ),
                       );
                     }
-                    if (index == 3) {
+                    if (index == 14) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('÷');
                         },
                         child: Firstbutton(
-                          text: 3.toString(),
-                          icon: FontAwesomeIcons.divide,
-                          iconcolor: const Color.fromARGB(255, 241, 90, 43),
+                          text: '÷',
                           color: const Color.fromARGB(255, 38, 38, 38),
 
-                          frontcolor: Colors.white,
+                          frontcolor: const Color.fromARGB(255, 232, 74, 26),
                         ),
                       );
                     }
-                    if (index == 4) {
+                    if (index == 15) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('!');
+                        },
+                        child: Firstbutton(
+                          text: 'x!',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+                          frontcolor: const Color.fromARGB(182, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 16) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('7');
@@ -115,156 +267,169 @@ class Homepage extends StatelessWidget {
                         ),
                       );
                     }
-                    if (index == 5) {
+                    if (index == 17) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('8');
                         },
                         child: Firstbutton(
-                          text: 8.toString(),
+                          text: '8',
                           color: const Color.fromARGB(255, 38, 38, 38),
 
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 6) {
+                    if (index == 18) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('9');
                         },
                         child: Firstbutton(
-                          text: 9.toString(),
-
+                          text: '9',
                           color: const Color.fromARGB(255, 38, 38, 38),
 
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 7) {
+                    if (index == 19) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('X');
                         },
                         child: Firstbutton(
                           text: 'X',
-
                           color: const Color.fromARGB(255, 38, 38, 38),
-
-                          frontcolor: const Color.fromARGB(255, 234, 90, 46),
+                          frontcolor: const Color.fromARGB(255, 237, 77, 28),
                         ),
                       );
                     }
-                    if (index == 8) {
+                    if (index == 20) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('1/');
+                        },
+                        child: Firstbutton(
+                          text: '1/x',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+                          frontcolor: const Color.fromARGB(174, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 21) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('4');
                         },
                         child: Firstbutton(
-                          text: 4.toString(),
+                          text: '4',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 9) {
+                    if (index == 22) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('5');
                         },
                         child: Firstbutton(
-                          text: 5.toString(),
+                          text: '5',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 10) {
+                    if (index == 23) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('6');
                         },
                         child: Firstbutton(
-                          text: 6.toString(),
+                          text: '6',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 11) {
+                    if (index == 24) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('-');
                         },
                         child: Firstbutton(
-                          text: '',
+                          text: 'X',
                           icon: FontAwesomeIcons.minus,
-                          iconcolor: const Color.fromARGB(255, 240, 104, 63),
+                          iconcolor: const Color.fromARGB(255, 239, 77, 28),
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 12) {
+                    if (index == 25) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('3.145');
+                        },
+                        child: Firstbutton(
+                          text: 'π',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+                          frontcolor: const Color.fromARGB(170, 255, 255, 255),
+                        ),
+                      );
+                    }
+                    if (index == 26) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('1');
                         },
                         child: Firstbutton(
-                          text: 1.toString(),
+                          text: '1',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 13) {
+                    if (index == 27) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('2');
                         },
                         child: Firstbutton(
-                          text: 2.toString(),
+                          text: '2',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 14) {
+                    if (index == 28) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('3');
                         },
                         child: Firstbutton(
-                          text: 3.toString(),
+                          text: '3',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 15) {
+                    if (index == 29) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('+');
                         },
                         child: Firstbutton(
-                          text: 15.toString(),
+                          text: '1',
                           icon: FontAwesomeIcons.plus,
-                          iconcolor: const Color.fromARGB(255, 240, 104, 63),
+                          iconcolor: const Color.fromARGB(255, 240, 74, 24),
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 16) {
+                    if (index == 30) {
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -272,7 +437,7 @@ class Homepage extends StatelessWidget {
                             PageRouteBuilder(
                               pageBuilder:
                                   (context, animation, secondaryAnimation) {
-                                    return Secondpage();
+                                    return Homepage();
                                   },
                               transitionsBuilder:
                                   (
@@ -290,16 +455,27 @@ class Homepage extends StatelessWidget {
                           );
                         },
                         child: Firstbutton(
-                          text: 16.toString(),
-                          icon: FontAwesomeIcons.arrowRight,
-                          iconcolor: Colors.deepOrange,
+                          text: '1',
+                          icon: FontAwesomeIcons.arrowLeft,
+                          iconcolor: const Color.fromARGB(255, 249, 79, 27),
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 17) {
+                    if (index == 31) {
+                      return GestureDetector(
+                        onTap: () {
+                          calculator.evaluteExpression('e');
+                        },
+                        child: Firstbutton(
+                          text: 'e',
+                          color: const Color.fromARGB(255, 38, 38, 38),
+                          frontcolor: Colors.white,
+                        ),
+                      );
+                    }
+                    if (index == 32) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('0');
@@ -307,12 +483,11 @@ class Homepage extends StatelessWidget {
                         child: Firstbutton(
                           text: '0',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 18) {
+                    if (index == 33) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('.');
@@ -320,22 +495,20 @@ class Homepage extends StatelessWidget {
                         child: Firstbutton(
                           text: '.',
                           color: const Color.fromARGB(255, 38, 38, 38),
-
                           frontcolor: Colors.white,
                         ),
                       );
                     }
-                    if (index == 19) {
+                    if (index == 34) {
                       return GestureDetector(
                         onTap: () {
                           calculator.evaluteExpression('=');
                         },
                         child: Firstbutton(
-                          text: 19.toString(),
+                          text: '1',
                           icon: FontAwesomeIcons.equals,
                           iconcolor: Colors.white,
-                          color: const Color.fromARGB(255, 241, 74, 23),
-
+                          color: Colors.deepOrange,
                           frontcolor: Colors.white,
                         ),
                       );
